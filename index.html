@@ -1,0 +1,35 @@
+<html>
+        <script>
+
+        </script>
+
+<body>
+<h3>JKS Generator</h3>
+<form action="main.php" method="post" enctype="multipart/form-data">
+        Enter Domain Name: <input type="text" name="projectDomainName"><br><br>
+        Upload Certificate File: <input type="file" name="certToUpload" id="certToUpload"><br>
+        <textarea id="certPaste" name="certPaste" rows="6" cols="50" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+Or paste cert here...
+Must start with -----BEGIN CERTIFICATE-----
+Must end with   -----END CERTIFICATE-----</textarea><br><br>
+        Upload Key File: <input type="file" name="keyToUpload" id="keyToUpload"><br>
+        <textarea id="keyPaste" name="keyPaste" rows="6" cols="50" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+Or paste key here..
+Must start with -----BEGIN PRIVATE KEY-----
+Must end with   -----END PRIVATE KEY-----
+</textarea><br><br>
+        Enter Keystore Password: <input type="text" name="keystorePass"><br><br>
+        <input type="submit" value="submit" name="submit">
+</form>
+
+<script>
+
+        document.getElementById("certToUpload").onchange = function(){
+                                                                document.getElementById("certPaste").disabled = true;
+                                                                }
+        document.getElementById("keyToUpload").onchange = function(){
+                                                                document.getElementById("keyPaste").disabled = true;
+                                                                }
+        </script>
+</body>
+</html>
