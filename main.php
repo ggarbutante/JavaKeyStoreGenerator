@@ -67,38 +67,27 @@ function sendEmail(pass,domainName){
 
 
 
-if(isset($_POST["projectDomainName"])){
+if(isset($_POST["projectDomainName"])) {
    $projectDomainName = $_POST['projectDomainName'];
    $projectUpload = shell_exec("mkdir /var/www/html/it-tools/tools/javakeystore/uploads/".$projectDomainName);
    $projectKeyStore = shell_exec("mkdir /var/www/html/it-tools/tools/javakeystore/keystore_files/".$projectDomainName);
-//   echo $projectUpload;
-//   echo $projectKeyStore;
 }	
 
-if(isset($_POST["keystorePass"])){
+if(isset($_POST["keystorePass"])) {
     $keystorePass = $_POST['keystorePass'];
 }
 
-if(isset($_POST["certPaste"])){
+if(isset($_POST["certPaste"])) {
     $certPaste = $_POST['certPaste'];
 }
-if(isset($_POST["keyPaste"])){
+if(isset($_POST["keyPaste"])) {
     $keyPaste = $_POST['keyPaste'];
 }
 
 echo '<pre>';
-#echo 'Project Name = '.$projectDomainName;
-#echo '<br/>';
-#echo 'Keystore Password = '.$keystorePass;
-#echo '<br/>';
-$tempKeyPass = "123Welcome123";
-#echo 'Temporary Pass = '.$tempKeyPass;
-#echo '<br/>';
-#echo '<pre>CERT = <br/>'.$certPaste.'</pre>';
-#echo '<br/>';
-#echo '<pre>KEY = <br/>'.$keyPaste.'</pre>';
 
-#echo '<pre>';
+$tempKeyPass = "123Welcome123";
+
 if(isset($_POST['submit'])){
         $fileCERT   	= $_FILES['certToUpload']['name'];  
         $temp_nameCERT  = $_FILES["certToUpload"]['tmp_name'];  
@@ -139,17 +128,14 @@ if(isset($_POST['submit'])){
   
    }
 
-#echo 'Here is some more debugging info:';
-#print_r($_FILES);
-
 print "</pre>";
 
 echo "<pre>";
 
 $sourcekeystore = "/var/www/html/it-tools/tools/javakeystore/keystore_files/".$projectDomainName."/sourcekeystore.p12";
-//echo "<br/>";
+
 $destkeystore = "/var/www/html/it-tools/tools/javakeystore/keystore_files/".$projectDomainName."/".$projectDomainName.".jks";
-//echo "<br/>";
+
 ini_set("expect.timeout", 30);
 
 ### Create source keystore..
@@ -256,8 +242,8 @@ $cases = array(
     // array(pattern, value to return if pattern matched)
     array("Enter keystore password:", "askDestPassword"),
     array("Enter key password for <".$newAlias.">", "askPrevKey"),
-        array("New key password for <".$newAlias.">:", "askNewKey"),
-        array("Re-enter new key password for <".$newAlias.">:", "askNewKeyAgain")
+    array("New key password for <".$newAlias.">:", "askNewKey"),
+    array("Re-enter new key password for <".$newAlias.">:", "askNewKeyAgain")
 );
 
 while (true) {
