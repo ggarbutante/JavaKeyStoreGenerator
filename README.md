@@ -6,3 +6,6 @@ It's a web app that accepts an SSL certificate and key file as input and outputs
 - PHP version >= 7.2
 - libexpect version >= 5.43.0
 - PHP [expect](https://www.php.net/manual/en/book.expect.php)
+
+## Documentation
+<img src="jks_page.png" align="right" />
