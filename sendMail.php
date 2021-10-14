@@ -1,6 +1,6 @@
 <?php
 #################################################################################
-## (c) Geronimo G Arbutante (garbutante@savvysherpa.com). All rights reserved. ##
+## (c) Geronimo G Arbutante (ggarbutante@gmail.com). All rights reserved.      ##
 #################################################################################
 
 $list = $_POST['emailList'];
